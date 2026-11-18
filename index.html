@@ -57,26 +57,27 @@ function refresh(){process();renderSeats();renderMy();renderAdmin()}
 fillDates();refresh();setInterval(()=>{fillDates();refresh()},15000);window.addEventListener('storage',e=>{if(e.key==='workspace_v3'&&e.newValue){db=JSON.parse(e.newValue);refresh()}});
 </script>
 <script type="module">
-  // Firebase application configuration supplied by the project owner.
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-  import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
-  const firebaseConfig = {
-    apiKey: "AIzaSyDJ4h58n-idAT00uZ1ypqYbtDssvkHPhL4",
-    authDomain: "epl-rpg-floating-office.firebaseapp.com",
-    databaseURL: "https://epl-rpg-floating-office-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "epl-rpg-floating-office",
-    storageBucket: "epl-rpg-floating-office.firebasestorage.app",
-    messagingSenderId: "1064494750885",
-    appId: "1:1064494750885:web:1dcc5333ff98c57cd2414c",
-    measurementId: "G-GQ706JJJXH"
-  };
-  const app = initializeApp(firebaseConfig);
-  try {
-    if (await isSupported()) {
-      const analytics = getAnalytics(app);
-    }
-  } catch (error) {
-    console.warn("Firebase Analytics could not initialize:", error);
-  }
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJ4h58n-idAT00uZ1ypqYbtDssvkHPhL4",
+    authDomain: "epl-rpg-floating-office.firebaseapp.com",
+    databaseURL: "https://epl-rpg-floating-office-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "epl-rpg-floating-office",
+    storageBucket: "epl-rpg-floating-office.firebasestorage.app",
+    messagingSenderId: "1064494750885",
+    appId: "1:1064494750885:web:1dcc5333ff98c57cd2414c",
+    measurementId: "G-GQ706JJJXH"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
 </html>
